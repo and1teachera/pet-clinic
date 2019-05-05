@@ -6,11 +6,15 @@ import java.util.Set;
  * @author Angel Zlatenov
  */
 
-public interface BasicCrudOperationsService<T> {
+public interface CrudOperationsService<T, ID> {
 
-    T findById(Long id);
+    T findById(ID id);
 
     T save(T t);
 
     Set<T> findAll();
+
+    void delete(T t);
+
+    void deleteById(ID id);
 }

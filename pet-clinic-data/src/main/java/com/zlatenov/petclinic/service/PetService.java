@@ -1,8 +1,10 @@
 package com.zlatenov.petclinic.service;
 
+import com.zlatenov.petclinic.model.Pet;
+
 /**
  * @author Angel Zlatenov
  */
 
-public class PetService {
+public interface PetService extends CrudOperationsService<Pet,Long> {
 }

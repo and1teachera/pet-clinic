@@ -1,10 +1,12 @@
 package com.zlatenov.petclinic.model;
 
+import javax.persistence.MappedSuperclass;
+
 /**
  * @author Angel Zlatenov
  */
-
-public class Person {
+@MappedSuperclass
+public class Person extends BaseEntity<Long> {
 
     private String firstName;
     private String lastName;
@@ -15,5 +17,13 @@ public class Person {
 
     public void setFirstName(final String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public void setLastName(final String lastName) {
+        this.lastName = lastName;
     }
 }

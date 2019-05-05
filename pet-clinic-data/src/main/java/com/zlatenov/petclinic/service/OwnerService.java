@@ -6,7 +6,7 @@ import com.zlatenov.petclinic.model.Owner;
  * @author Angel Zlatenov
  */
 
-public interface OwnerService extends BasicCrudService<Owner> {
+public interface OwnerService extends CrudOperationsService<Owner,Long> {
 
     Owner findByLastName(String lastName);
 }

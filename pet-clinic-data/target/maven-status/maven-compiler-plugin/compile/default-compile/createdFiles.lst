@@ -1,0 +1,5 @@
+com/zlatenov/petclinic/model/Person.class
+com/zlatenov/petclinic/model/PetType.class
+com/zlatenov/petclinic/model/Pet.class
+com/zlatenov/petclinic/model/Owner.class
+com/zlatenov/petclinic/model/Vet.class
