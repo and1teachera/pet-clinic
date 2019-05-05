@@ -12,15 +12,15 @@ import java.util.Set;
  * @author Angel Zlatenov
  */
 
-public abstract class AbstractMapService<T extends BaseEntity<ID>, ID> implements CrudOperationsService<T, ID> {
+public abstract class AbstractMapService<T extends BaseEntity> implements CrudOperationsService<T> {
 
-    protected Map<ID,T> map = new HashMap<>();
+    protected Map<Long,T> map = new HashMap<>();
 
     public Set<T> findAll(){
         return new HashSet<>(map.values());
     }
 
-    public T findById(final ID id){
+    public T findById(final Long id){
         return map.get(id);
     }
 
@@ -28,13 +28,13 @@ public abstract class AbstractMapService<T extends BaseEntity<ID>, ID> implement
         if(t == null){
             throw new RuntimeException("We cannot save null object");
         }
-        t.setId((ID) (t.getId() != null ? (Long) t.getId() : getNextId()));
+        t.setId((t.getId() != null ? t.getId() : getNextId()));
         map.put(t.getId(), t);
 
         return t;
     }
 
-    public void deleteById(ID id){
+    public void deleteById(Long id){
         map.remove(id);
     }
 

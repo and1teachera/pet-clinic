@@ -9,6 +9,6 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+public class VetServiceMap extends AbstractMapService<Vet> implements VetService {
 
 }

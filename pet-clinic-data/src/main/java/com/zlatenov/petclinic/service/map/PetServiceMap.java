@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
  * @author Angel Zlatenov
  */
 @Service
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
+public class PetServiceMap extends AbstractMapService<Pet> implements PetService {
 
 }

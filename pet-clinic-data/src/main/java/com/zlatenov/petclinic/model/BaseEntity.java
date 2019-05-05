@@ -7,15 +7,15 @@ import java.io.Serializable;
  * @author Angel Zlatenov
  */
 @MappedSuperclass
-public class BaseEntity<ID> implements Serializable {
+public class BaseEntity implements Serializable {
 
-    private ID id;
+    private Long id;
 
-    public ID getId() {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(final ID id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 }

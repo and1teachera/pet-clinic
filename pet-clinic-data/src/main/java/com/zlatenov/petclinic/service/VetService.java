@@ -6,5 +6,5 @@ import com.zlatenov.petclinic.model.Vet;
  * @author Angel Zlatenov
  */
 
-public interface VetService extends CrudOperationsService<Vet,Long> {
+public interface VetService extends CrudOperationsService<Vet> {
 }

@@ -6,7 +6,7 @@ import javax.persistence.MappedSuperclass;
  * @author Angel Zlatenov
  */
 @MappedSuperclass
-public class Person extends BaseEntity<Long> {
+public class Person extends BaseEntity {
 
     private String firstName;
     private String lastName;

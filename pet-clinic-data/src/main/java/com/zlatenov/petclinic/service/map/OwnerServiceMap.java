@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author Angel Zlatenov
  */
 @Service
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
+public class OwnerServiceMap extends AbstractMapService<Owner> implements OwnerService {
 
     @Override
     public Owner findByLastName(final String lastName) {

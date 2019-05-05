@@ -6,9 +6,9 @@ import java.util.Set;
  * @author Angel Zlatenov
  */
 
-public interface CrudOperationsService<T, ID> {
+public interface CrudOperationsService<T> {
 
-    T findById(ID id);
+    T findById(Long id);
 
     T save(T t);
 
@@ -16,5 +16,5 @@ public interface CrudOperationsService<T, ID> {
 
     void delete(T t);
 
-    void deleteById(ID id);
+    void deleteById(Long id);
 }
