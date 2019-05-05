@@ -1,5 +1,6 @@
 package com.zlatenov.petclinic.service.map;
 
+import com.zlatenov.petclinic.exceptions.SavingNullObjectsException;
 import com.zlatenov.petclinic.model.BaseEntity;
 import com.zlatenov.petclinic.service.CrudOperationsService;
 
@@ -26,7 +27,7 @@ public abstract class AbstractMapService<T extends BaseEntity> implements CrudOp
 
     public T save(T t){
         if(t == null){
-            throw new RuntimeException("We cannot save null object");
+            throw new SavingNullObjectsException();
         }
         t.setId((t.getId() != null ? t.getId() : getNextId()));
         map.put(t.getId(), t);
