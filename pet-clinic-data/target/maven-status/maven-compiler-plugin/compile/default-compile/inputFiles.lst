@@ -1,5 +1,14 @@
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/model/Person.java
-/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/model/Owner.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/service/map/VetServiceMap.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/service/VetService.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/service/OwnerService.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/service/map/AbstractMapService.java
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/model/Pet.java
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/model/Vet.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/service/map/OwnerServiceMap.java
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/model/PetType.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/model/BaseEntity.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/service/PetService.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/service/map/PetServiceMap.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/model/Owner.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-data/src/main/java/com/zlatenov/petclinic/service/CrudOperationsService.java
