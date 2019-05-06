@@ -10,5 +10,7 @@ public class SavingNullObjectsException extends RuntimeException {
         super("We cannot save null object");
     }
 
-
+    public SavingNullObjectsException(final String message) {
+        super(message);
+    }
 }

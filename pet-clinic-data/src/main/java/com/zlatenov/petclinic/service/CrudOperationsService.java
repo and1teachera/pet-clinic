@@ -1,5 +1,6 @@
 package com.zlatenov.petclinic.service;
 
+import java.util.Collection;
 import java.util.Set;
 
 /**
@@ -17,4 +18,6 @@ public interface CrudOperationsService<T> {
     void delete(T t);
 
     void deleteById(Long id);
+
+    Collection<T> saveAll(Collection<T> collection);
 }
