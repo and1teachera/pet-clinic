@@ -13,7 +13,6 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * @author Angel Zlatenov
@@ -41,20 +40,20 @@ public class OwnerServiceMap extends AbstractMapService<Owner> implements OwnerS
 
     @Override
     public Owner save(final Owner owner) {
-        Set<Pet> pets = Optional.ofNullable(owner)
-                .stream()
-                .flatMap(owner1 -> owner1.getPets().stream())
-                .collect(Collectors.toSet());
+        final Set<Pet> pets = Optional.ofNullable(owner)
+                .orElseThrow(SavingNullObjectsException::new)
+                .getPets();
+
+        if(pets.isEmpty()) {
+            throw new SavingNullObjectsException("We cannot save owners without pets");
+        }
 
         if(pets.stream()
                 .anyMatch(pet -> Objects.isNull(pet.getPetType()))) {
             throw new SavingNullObjectsException("We cannot save owners which pets doesnt have a type");
         }
 
-        pets = new HashSet<>(petService.saveAll(pets));
-        petTypeService.saveAll(pets.stream()
-                                       .map(Pet::getPetType)
-                                       .collect(Collectors.toSet()));
+        owner.setPets(new HashSet<>(petService.saveAll(pets)));
 
         return super.save(owner);
     }
