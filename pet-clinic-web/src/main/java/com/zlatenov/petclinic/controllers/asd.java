@@ -12,10 +12,10 @@ public class asd {
         BigDecimal remainingSum = new BigDecimal(100000);
         for (int i = 0; i < numberOfMonths; i++) {
             if (remainingSum.compareTo(BigDecimal.valueOf(50000)) > 0) {
-                remainingSum = (remainingSum.multiply(new BigDecimal(1.012))).subtract(new BigDecimal(1100));
+                remainingSum = (remainingSum.multiply(new BigDecimal("1.012"))).subtract(new BigDecimal(1100));
             }
             else{
-                remainingSum = (remainingSum.multiply(new BigDecimal(1.01))).subtract(new BigDecimal(1100));
+                remainingSum = (remainingSum.multiply(new BigDecimal("1.01"))).subtract(new BigDecimal(1100));
             }
         }
         System.out.println(remainingSum);
