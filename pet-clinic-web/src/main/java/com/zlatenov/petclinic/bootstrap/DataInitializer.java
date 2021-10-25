@@ -11,7 +11,6 @@ import com.zlatenov.petclinic.service.PetTypeService;
 import com.zlatenov.petclinic.service.SpecialityService;
 import com.zlatenov.petclinic.service.VetService;
 import com.zlatenov.petclinic.service.VisitService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +28,6 @@ public class DataInitializer implements CommandLineRunner {
     private final SpecialityService specialityService;
     private final VisitService visitService;
 
-    @Autowired
     public DataInitializer(final OwnerService ownerService, final VetService vetService,
             final PetTypeService petTypeService, final SpecialityService specialityService,
             final VisitService visitService) {
