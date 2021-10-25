@@ -4,7 +4,7 @@ import com.zlatenov.petclinic.exceptions.SavingNullObjectsException;
 import com.zlatenov.petclinic.model.Vet;
 import com.zlatenov.petclinic.service.SpecialityService;
 import com.zlatenov.petclinic.service.VetService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -15,15 +15,11 @@ import java.util.stream.Collectors;
  * @author Angel Zlatenov
  */
 
+@AllArgsConstructor
 @Service
 public class VetServiceMap extends AbstractMapService<Vet> implements VetService {
 
     private final SpecialityService specialityService;
-
-    @Autowired
-    public VetServiceMap(final SpecialityService specialityService) {
-        this.specialityService = specialityService;
-    }
 
     @Override
     public Vet save(final Vet vet) {

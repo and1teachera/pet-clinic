@@ -11,6 +11,7 @@ import com.zlatenov.petclinic.service.PetTypeService;
 import com.zlatenov.petclinic.service.SpecialityService;
 import com.zlatenov.petclinic.service.VetService;
 import com.zlatenov.petclinic.service.VisitService;
+import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,7 @@ import java.time.LocalDate;
 /**
  * @author Angel Zlatenov
  */
+@AllArgsConstructor
 @Component
 public class DataInitializer implements CommandLineRunner {
 
@@ -28,15 +30,6 @@ public class DataInitializer implements CommandLineRunner {
     private final SpecialityService specialityService;
     private final VisitService visitService;
 
-    public DataInitializer(final OwnerService ownerService, final VetService vetService,
-            final PetTypeService petTypeService, final SpecialityService specialityService,
-            final VisitService visitService) {
-        this.ownerService = ownerService;
-        this.vetService = vetService;
-        this.petTypeService = petTypeService;
-        this.specialityService = specialityService;
-        this.visitService = visitService;
-    }
 
     @Override
     public void run(String... args) throws Exception {

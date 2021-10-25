@@ -1,5 +1,8 @@
 package com.zlatenov.petclinic.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -7,18 +10,13 @@ import javax.persistence.Table;
 /**
  * @author Angel Zlatenov
  */
+@Getter
+@Setter
 @Entity
 @Table(name = "Specialties")
 public class Speciality extends BaseEntity {
 
-    @Column(name = "description")
+    @Column
     private String description;
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(final String description) {
-        this.description = description;
-    }
 }

@@ -1,5 +1,8 @@
 package com.zlatenov.petclinic.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -12,6 +15,8 @@ import java.util.Set;
 /**
  * @author Angel Zlatenov
  */
+@Getter
+@Setter
 @Entity
 @Table(name = "Vets")
 public class Vet extends Person {
@@ -21,11 +26,4 @@ public class Vet extends Person {
     inverseJoinColumns = @JoinColumn(name = "specialty_id"))
     private Set<Speciality> specialities = new HashSet<>();
 
-    public Set<Speciality> getSpecialities() {
-        return specialities;
-    }
-
-    public void setSpecialities(final Set<Speciality> specialities) {
-        this.specialities = specialities;
-    }
 }

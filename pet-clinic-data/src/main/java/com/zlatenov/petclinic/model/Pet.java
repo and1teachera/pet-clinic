@@ -1,5 +1,8 @@
 package com.zlatenov.petclinic.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +17,8 @@ import java.util.Set;
 /**
  * @author Angel Zlatenov
  */
+@Getter
+@Setter
 @Entity
 @Table(name = "Pets")
 public class Pet extends NamedEntity {
@@ -31,36 +36,4 @@ public class Pet extends NamedEntity {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
-
-    public PetType getPetType() {
-        return this.petType;
-    }
-
-    public void setPetType(final PetType petType) {
-        this.petType = petType;
-    }
-
-    public Owner getOwner() {
-        return this.owner;
-    }
-
-    public void setOwner(final Owner owner) {
-        this.owner = owner;
-    }
-
-    public LocalDate getBirthDate() {
-        return this.birthDate;
-    }
-
-    public void setBirthDate(final LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public Set<Visit> getVisits() {
-        return visits;
-    }
-
-    public void setVisits(final Set<Visit> visits) {
-        this.visits = visits;
-    }
 }
