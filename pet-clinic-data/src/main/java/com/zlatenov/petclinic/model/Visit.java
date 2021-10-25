@@ -17,10 +17,10 @@ import java.time.LocalDate;
 @Entity
 public class Visit extends BaseEntity {
 
-    @Column(name = "date")
+    @Column
     private LocalDate date;
 
-    @Column(name = "description")
+    @Column
     private String description;
 
     @ManyToOne
