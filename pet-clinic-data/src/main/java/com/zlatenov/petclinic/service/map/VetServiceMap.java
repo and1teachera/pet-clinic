@@ -5,6 +5,7 @@ import com.zlatenov.petclinic.model.Vet;
 import com.zlatenov.petclinic.service.SpecialityService;
 import com.zlatenov.petclinic.service.VetService;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service
+@Profile("map")
 public class VetServiceMap extends AbstractMapService<Vet> implements VetService {
 
     private final SpecialityService specialityService;

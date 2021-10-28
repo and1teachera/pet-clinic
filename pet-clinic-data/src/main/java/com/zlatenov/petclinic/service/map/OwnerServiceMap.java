@@ -6,6 +6,7 @@ import com.zlatenov.petclinic.model.Pet;
 import com.zlatenov.petclinic.service.OwnerService;
 import com.zlatenov.petclinic.service.PetService;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -19,6 +20,7 @@ import java.util.Set;
  */
 @AllArgsConstructor
 @Service
+@Profile("map")
 public class OwnerServiceMap extends AbstractMapService<Owner> implements OwnerService {
 
     private final PetService petService;
