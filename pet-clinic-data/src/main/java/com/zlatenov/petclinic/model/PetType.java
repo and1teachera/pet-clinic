@@ -8,4 +8,8 @@ import javax.persistence.Entity;
 @Entity
 public class PetType extends NamedEntity {
 
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

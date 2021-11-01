@@ -2,6 +2,8 @@ package com.zlatenov.petclinic.service;
 
 import com.zlatenov.petclinic.model.Owner;
 
+import java.util.List;
+
 /**
  * @author Angel Zlatenov
  */
@@ -9,4 +11,6 @@ import com.zlatenov.petclinic.model.Owner;
 public interface OwnerService extends CrudOperationsService<Owner> {
 
     Owner findByLastName(String lastName);
+
+    List<Owner> findByLastNameLike(String lastName);
 }

@@ -10,7 +10,9 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -52,5 +54,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner> implements OwnerS
         owner.setPets(new HashSet<>(petService.saveAll(pets)));
 
         return super.save(owner);
+    }
+
+    @Override
+    public List<Owner> findByLastNameLike(String lastName) {
+        return Collections.emptyList();
     }
 }
