@@ -1,0 +1,11 @@
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/service/jpa/AbstractCrudOperationsServiceImplTest.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/service/jpa/PetTypeServiceImplTest.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/controllers/VetControllerTest.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/service/jpa/PetServiceImplTest.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/controllers/IndexControllerTest.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/service/jpa/SpecialityServiceImplTest.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/service/jpa/VetServiceImplTest.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/service/jpa/VisitServiceImplTest.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/PetClinicApplicationTest.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/service/jpa/OwnerServiceImplTest.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/test/java/com/zlatenov/petclinic/controllers/OwnerControllerTest.java

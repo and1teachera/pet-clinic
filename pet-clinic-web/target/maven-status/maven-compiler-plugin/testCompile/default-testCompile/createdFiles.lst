@@ -1,0 +1,11 @@
+com/zlatenov/petclinic/service/jpa/PetServiceImplTest.class
+com/zlatenov/petclinic/service/jpa/VetServiceImplTest.class
+com/zlatenov/petclinic/controllers/VetControllerTest.class
+com/zlatenov/petclinic/service/jpa/VisitServiceImplTest.class
+com/zlatenov/petclinic/service/jpa/OwnerServiceImplTest.class
+com/zlatenov/petclinic/controllers/OwnerControllerTest.class
+com/zlatenov/petclinic/service/jpa/PetTypeServiceImplTest.class
+com/zlatenov/petclinic/PetClinicApplicationTest.class
+com/zlatenov/petclinic/service/jpa/SpecialityServiceImplTest.class
+com/zlatenov/petclinic/service/jpa/AbstractCrudOperationsServiceImplTest.class
+com/zlatenov/petclinic/controllers/IndexControllerTest.class

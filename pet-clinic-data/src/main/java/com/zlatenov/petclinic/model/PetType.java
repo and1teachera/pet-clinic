@@ -1,6 +1,6 @@
 package com.zlatenov.petclinic.model;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 
 /**
  * @author Angel Zlatenov
