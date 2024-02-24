@@ -14,5 +14,5 @@ public interface OwnerRepository extends JpaRepository<Owner, Long> {
 
     Optional<Owner> findByLastName(String lastName);
 
-    List<Owner> findByLastNameLike(String lastName);
+    List<Owner> findAllByLastNameLike(String lastName);
 }

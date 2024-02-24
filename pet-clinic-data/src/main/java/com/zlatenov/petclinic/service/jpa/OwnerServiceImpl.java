@@ -26,7 +26,7 @@ public class OwnerServiceImpl extends AbstractCrudOperationsServiceImpl<Owner, O
     }
 
     @Override
-    public List<Owner> findByLastNameLike(String lastName) {
-        return repository.findByLastNameLike(lastName + "%");
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return repository.findAllByLastNameLike("%" + lastName + "%");
     }
 }

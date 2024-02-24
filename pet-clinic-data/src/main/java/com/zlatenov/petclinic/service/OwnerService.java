@@ -12,5 +12,5 @@ public interface OwnerService extends CrudOperationsService<Owner> {
 
     Owner findByLastName(String lastName);
 
-    List<Owner> findByLastNameLike(String lastName);
+    List<Owner> findAllByLastNameLike(String lastName);
 }

@@ -53,7 +53,7 @@ class OwnerControllerTest {
         Owner owner2 = new Owner();
         owner2.setId(2L);
         owners.add(owner2);
-        when(ownerService.findByLastNameLike(anyString()))
+        when(ownerService.findAllByLastNameLike(anyString()))
                 .thenReturn(owners);
 
         mockMvc.perform(get("/owners"))
@@ -66,7 +66,7 @@ class OwnerControllerTest {
     void processFindFormReturnOne() throws Exception {
         Owner owner = new Owner();
         owner.setId(1L);
-        when(ownerService.findByLastNameLike(anyString())).thenReturn(Collections.singletonList(owner));
+        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Collections.singletonList(owner));
 
         mockMvc.perform(get("/owners"))
                .andExpect(status().is3xxRedirection())
@@ -82,7 +82,7 @@ class OwnerControllerTest {
         Owner owner2 = new Owner();
         owner2.setId(2L);
         owners.add(owner2);
-        when(ownerService.findByLastNameLike(anyString()))
+        when(ownerService.findAllByLastNameLike(anyString()))
                 .thenReturn(owners);
 
         mockMvc.perform(get("/owners")

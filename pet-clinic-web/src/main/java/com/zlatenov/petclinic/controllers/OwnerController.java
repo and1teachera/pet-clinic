@@ -47,7 +47,7 @@ public class OwnerController {
             owner.setLastName("");
         }
 
-        List<Owner> ownersResults = ownerService.findByLastNameLike(owner.getLastName());
+        List<Owner> ownersResults = ownerService.findAllByLastNameLike(owner.getLastName());
         if (CollectionUtils.isEmpty(ownersResults)) {
             // no owners found
             result.rejectValue("lastName", "notFound", "not found");
@@ -63,12 +63,11 @@ public class OwnerController {
     }
 
     @GetMapping("/{ownerId}")
-    public ModelAndView ownerDetails(@PathVariable Long ownerId, ModelAndView modelAndView){
+    public ModelAndView ownerDetails(@PathVariable Long ownerId, ModelAndView modelAndView) {
         modelAndView.setViewName("owners/ownerDetails");
         modelAndView.addObject("owner", ownerService.findById(ownerId));
         return modelAndView;
     }
-
 
     @GetMapping("/new")
     public String initCreationForm(Model model) {
@@ -95,16 +94,13 @@ public class OwnerController {
     }
 
     @PostMapping("/{ownerId}/edit")
-    public String processUpdateOwnerForm(Owner owner, BindingResult result,
-                                         @PathVariable Long ownerId) {
+    public String processUpdateOwnerForm(Owner owner, BindingResult result, @PathVariable Long ownerId) {
         if (result.hasErrors()) {
             return CREATE_OR_UPDATE_OWNER_FORM;
         }
-        else {
-            owner.setId(ownerId);
-            this.ownerService.save(owner);
-            return "redirect:/owners/" + ownerId;
-        }
+        owner.setId(ownerId);
+        this.ownerService.save(owner);
+        return "redirect:/owners/" + ownerId;
     }
 
 }
