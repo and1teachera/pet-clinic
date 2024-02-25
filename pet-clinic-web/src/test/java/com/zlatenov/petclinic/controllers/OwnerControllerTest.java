@@ -132,10 +132,8 @@ class OwnerControllerTest {
 
     @Test
     void processCreationForm() throws Exception {
-        Owner owner = new Owner();
-        long id = 1L;
-        owner.setId(id);
-        when(ownerService.save(ArgumentMatchers.any())).thenReturn(owner);
+        when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1L).build());
+
 
         mockMvc.perform(post("/owners/new"))
                .andExpect(status().is3xxRedirection())

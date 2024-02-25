@@ -81,10 +81,8 @@ public class OwnerController {
         if (result.hasErrors()) {
             return CREATE_OR_UPDATE_OWNER_FORM;
         }
-        else {
-            Owner savedOwner = this.ownerService.save(owner);
-            return "redirect:/owners/" + savedOwner.getId();
-        }
+        Owner savedOwner = this.ownerService.save(owner);
+        return "redirect:/owners/" + savedOwner.getId();
     }
 
     @GetMapping("/{ownerId}/edit")
@@ -94,7 +92,7 @@ public class OwnerController {
     }
 
     @PostMapping("/{ownerId}/edit")
-    public String processUpdateOwnerForm(Owner owner, BindingResult result, @PathVariable Long ownerId) {
+    public String processUpdateOwnerForm(@Valid Owner owner, BindingResult result, @PathVariable Long ownerId) {
         if (result.hasErrors()) {
             return CREATE_OR_UPDATE_OWNER_FORM;
         }
