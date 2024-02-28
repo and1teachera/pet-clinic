@@ -1,6 +1,8 @@
 package com.zlatenov.petclinic.model;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import jakarta.persistence.CascadeType;
@@ -20,8 +22,22 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "Pets")
 public class Pet extends NamedEntity {
+
+    @Builder
+    public Pet(Long id, String name, PetType petType, Owner owner, LocalDate birthDate, Set<Visit> visits) {
+        this.id = id;
+        this.name = name;
+        this.petType = petType;
+        this.owner = owner;
+        this.birthDate = birthDate;
+
+        if (visits == null || !visits.isEmpty()) {
+            this.visits = visits;
+        }
+    }
 
     @ManyToOne
     @JoinColumn(name = "type_id")

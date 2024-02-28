@@ -10,6 +10,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import org.springframework.util.StringUtils;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -31,7 +33,7 @@ public class Owner extends Person {
         this.city = city;
         this.telephone = telephone;
 
-        if(pets != null) {
+        if (pets != null) {
             this.pets = pets;
         }
     }
@@ -49,17 +51,15 @@ public class Owner extends Person {
     private Set<Pet> pets = new HashSet<>();
 
     public Pet getPet(String name, boolean ignoreNew) {
-        name = name.toLowerCase();
-        for (Pet pet : pets) {
-            if (!ignoreNew || !pet.isNew()) {
-                String compName = pet.getName();
-                compName = compName.toLowerCase();
-                if (compName.equals(name)) {
-                    return pet;
-                }
-            }
+        if (name == null || name.isBlank()) {
+            return null;
         }
-        return null;
+        String nameLowerCase = name.toLowerCase();
+        return pets.stream()
+                .filter(pet -> !ignoreNew && !pet.isNew())
+                .filter(pet -> nameLowerCase.equals(pet.getName().toLowerCase()))
+                .findFirst()
+                .orElse(null);
     }
 
 }

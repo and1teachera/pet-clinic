@@ -1,6 +1,7 @@
 package com.zlatenov.petclinic.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import jakarta.persistence.Column;
@@ -11,9 +12,10 @@ import jakarta.persistence.MappedSuperclass;
  */
 @Getter
 @Setter
+@NoArgsConstructor
 @MappedSuperclass
 public class NamedEntity extends BaseEntity {
 
     @Column
-    private String name;
+    protected String name;
 }

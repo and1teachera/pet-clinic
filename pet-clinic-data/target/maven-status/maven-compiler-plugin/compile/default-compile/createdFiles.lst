@@ -23,6 +23,7 @@ com/zlatenov/petclinic/model/Speciality.class
 com/zlatenov/petclinic/model/Owner.class
 com/zlatenov/petclinic/service/map/PetTypeServiceMap.class
 com/zlatenov/petclinic/service/jpa/VetServiceImpl.class
+com/zlatenov/petclinic/model/Owner$OwnerBuilder.class
 com/zlatenov/petclinic/service/PetTypeService.class
 com/zlatenov/petclinic/service/jpa/VisitServiceImpl.class
 com/zlatenov/petclinic/service/map/SpecialityServiceMap.class

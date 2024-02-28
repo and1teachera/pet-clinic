@@ -1,5 +1,6 @@
 package com.zlatenov.petclinic.model;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +15,8 @@ import jakarta.persistence.Table;
 @Setter
 @Entity
 @Table(name = "Specialties")
-public class Speciality extends BaseEntity {
+public class Speciality extends NamedEntity {
+
 
     @Column
     private String description;

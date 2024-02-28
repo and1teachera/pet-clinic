@@ -6,6 +6,7 @@ import com.zlatenov.petclinic.model.PetType;
 import com.zlatenov.petclinic.service.OwnerService;
 import com.zlatenov.petclinic.service.PetService;
 import com.zlatenov.petclinic.service.PetTypeService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -21,6 +22,7 @@ import java.util.Collection;
  * Created by jt on 9/22/18.
  */
 @Controller
+@AllArgsConstructor
 @RequestMapping("/owners/{ownerId}")
 public class PetController {
 
@@ -29,12 +31,6 @@ public class PetController {
     private final PetService petService;
     private final OwnerService ownerService;
     private final PetTypeService petTypeService;
-
-    public PetController(PetService petService, OwnerService ownerService, PetTypeService petTypeService) {
-        this.petService = petService;
-        this.ownerService = ownerService;
-        this.petTypeService = petTypeService;
-    }
 
     @ModelAttribute("types")
     public Collection<PetType> populatePetTypes() {

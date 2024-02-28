@@ -2,6 +2,7 @@ package com.zlatenov.petclinic.formatters;
 
 import com.zlatenov.petclinic.model.PetType;
 import com.zlatenov.petclinic.service.PetTypeService;
+import lombok.AllArgsConstructor;
 import org.springframework.format.Formatter;
 import org.springframework.stereotype.Component;
 
@@ -13,13 +14,10 @@ import java.util.Locale;
  * Created by jt on 9/22/18.
  */
 @Component
+@AllArgsConstructor
 public class PetTypeFormatter implements Formatter<PetType> {
 
     private final PetTypeService petTypeService;
-
-    public PetTypeFormatter(PetTypeService petTypeService) {
-        this.petTypeService = petTypeService;
-    }
 
     @Override
     public String print(PetType petType, Locale locale) {
