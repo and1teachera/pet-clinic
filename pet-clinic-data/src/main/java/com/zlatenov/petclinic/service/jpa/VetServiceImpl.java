@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
  * @author Angel Zlatenov
  */
 @Service
-//@Profile({"default", "jpa"})
 public class VetServiceImpl extends AbstractCrudOperationsServiceImpl<Vet, VetRepository> implements VetService {
     public VetServiceImpl(VetRepository repository) {
         super(repository);

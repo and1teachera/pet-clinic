@@ -13,6 +13,7 @@ import com.zlatenov.petclinic.service.VetService;
 import com.zlatenov.petclinic.service.VisitService;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -22,6 +23,7 @@ import java.time.LocalDate;
  */
 @AllArgsConstructor
 @Component
+@Profile("default")
 public class DataInitializer implements CommandLineRunner {
 
     private final OwnerService ownerService;

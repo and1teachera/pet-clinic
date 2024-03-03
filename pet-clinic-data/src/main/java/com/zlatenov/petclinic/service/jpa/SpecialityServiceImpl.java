@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
  * @author Angel Zlatenov
  */
 @Service
-//@Profile({"default", "jpa"})
 public class SpecialityServiceImpl extends AbstractCrudOperationsServiceImpl<Speciality, SpecialityRepository> implements SpecialityService {
     public SpecialityServiceImpl(SpecialityRepository repository) {
         super(repository);
