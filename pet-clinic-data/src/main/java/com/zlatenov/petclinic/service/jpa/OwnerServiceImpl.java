@@ -13,7 +13,7 @@ import java.util.List;
  * @author Angel Zlatenov
  */
 @Service
-@Profile({"default", "jpa"})
+//@Profile({"default", "jpa"})
 public class OwnerServiceImpl extends AbstractCrudOperationsServiceImpl<Owner, OwnerRepository> implements OwnerService {
 
     public OwnerServiceImpl(OwnerRepository repository) {

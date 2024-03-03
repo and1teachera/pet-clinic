@@ -80,13 +80,17 @@ public class PetController {
     }
 
     @PostMapping("/pets/{petId}/edit")
-    public String processUpdateForm(@Valid Pet pet, BindingResult result, Owner owner, Model model) {
+    public String processUpdateForm(@Valid Pet editedPet, BindingResult result, Owner owner, Model model) {
         if (result.hasErrors()) {
-            pet.setOwner(owner);
-            model.addAttribute("pet", pet);
+            editedPet.setOwner(owner);
+            model.addAttribute("pet", editedPet);
             return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
         } else {
-            owner.getPets().add(pet);
+            Pet pet = (Pet) model.getAttribute("pet");
+            pet.setPetType(editedPet.getPetType());
+            pet.setBirthDate(editedPet.getBirthDate());
+            pet.setName(editedPet.getName());
+            pet.setOwner(owner);
             petService.save(pet);
             return "redirect:/owners/" + owner.getId();
         }

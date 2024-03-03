@@ -1,5 +1,9 @@
 com/zlatenov/petclinic/PetClinicApplication.class
 com/zlatenov/petclinic/controllers/OwnerController.class
+com/zlatenov/petclinic/controllers/VisitController$1.class
+com/zlatenov/petclinic/controllers/VisitController.class
 com/zlatenov/petclinic/controllers/IndexController.class
 com/zlatenov/petclinic/controllers/VetController.class
+com/zlatenov/petclinic/controllers/PetController.class
 com/zlatenov/petclinic/bootstrap/DataInitializer.class
+com/zlatenov/petclinic/formatters/PetTypeFormatter.class

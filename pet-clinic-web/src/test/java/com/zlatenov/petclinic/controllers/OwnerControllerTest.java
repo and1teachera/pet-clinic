@@ -4,6 +4,7 @@ import com.zlatenov.petclinic.model.Owner;
 import com.zlatenov.petclinic.service.OwnerService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.ArgumentMatchers;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.hamcrest.Matchers.*;
-import static org.mockito.Mockito.*;
+import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 /**
  * @author Angel Zlatenov
@@ -93,20 +102,6 @@ class OwnerControllerTest {
     }
 
     @Test
-    void displayOwner() throws Exception {
-        Owner owner = new Owner();
-        owner.setId(1L);
-        when(ownerService.findById(anyLong())).thenReturn(owner);
-
-        mockMvc.perform(get("/owners/123"))
-               .andExpect(status().isOk())
-               .andExpect(view().name("owners/ownerDetails"))
-               .andExpect(model().attribute("owner", hasProperty("id", is(1l))));
-    }
-
-
-
-    @Test
     void ownerDetails() throws Exception {
         Owner owner = new Owner();
         long id = 1L;
@@ -117,8 +112,6 @@ class OwnerControllerTest {
                .andExpect(model().attributeExists("owner"))
                .andExpect(model().attribute("owner", hasProperty("id", is(id))))
                .andExpect(view().name("owners/ownerDetails"));
-
-
     }
 
     @Test
@@ -132,21 +125,23 @@ class OwnerControllerTest {
 
     @Test
     void processCreationForm() throws Exception {
-        when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1L).build());
+        Owner owner = Owner.builder().id(1L).build();
+        when(ownerService.save(ArgumentMatchers.any())).thenReturn(owner);
 
 
         mockMvc.perform(post("/owners/new"))
                .andExpect(status().is3xxRedirection())
                .andExpect(view().name("redirect:/owners/1"));
 
-        verify(ownerService).save(ArgumentMatchers.any());
+        ArgumentCaptor<Owner> ownerArgumentCaptor = ArgumentCaptor.forClass(Owner.class);
+        verify(ownerService).save(ownerArgumentCaptor.capture());
+        assertNull(ownerArgumentCaptor.getValue().getId());
     }
 
     @Test
     void initUpdateOwnerForm() throws Exception {
-        Owner owner = new Owner();
         long id = 1L;
-        owner.setId(id);
+        Owner owner = Owner.builder().id(id).build();
         when(ownerService.findById(id)).thenReturn(owner);
 
         mockMvc.perform(get("/owners/1/edit"))

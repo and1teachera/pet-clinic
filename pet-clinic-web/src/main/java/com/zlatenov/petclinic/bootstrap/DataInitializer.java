@@ -114,6 +114,57 @@ public class DataInitializer implements CommandLineRunner {
 
         vetService.save(vet2);
 
+        // Generate additional Owners, Pets, and Vets
+        String[] ownerFirstNames = {"Alice", "Bob", "Charlie", "Diana", "Edward"};
+        String[] ownerLastNames = {"Smith", "Johnson", "Williams", "Brown", "Davis"};
+        String[] petNames = {"Buddy", "Lucy", "Max", "Daisy", "Bella"};
+        String[] vetFirstNames = {"George", "Hannah", "Ian", "Julia", "Kevin"};
+        String[] vetLastNames = {"Taylor", "Moore", "King", "Walker", "Lee"};
+
+        for (int i = 0; i < 5; i++) {
+            // Create new owner
+            Owner newOwner = new Owner();
+            newOwner.setFirstName(ownerFirstNames[i]);
+            newOwner.setLastName(ownerLastNames[i]);
+            newOwner.setAddress("Street " + (100 + i));
+            newOwner.setCity("City" + (i + 1));
+            newOwner.setTelephone("98765432" + i);
+
+            // Create new pet
+            Pet newPet = new Pet();
+            newPet.setName(petNames[i]);
+            newPet.setOwner(newOwner);
+            newPet.setBirthDate(LocalDate.now());
+            newPet.setPetType(i % 2 == 0 ? savedDogPetType : savedCatPetType);
+            newOwner.getPets().add(newPet);
+
+            // Save owner and pet
+            ownerService.save(newOwner);
+
+            // Create and save a visit for the pet
+            Visit petVisit = new Visit();
+            petVisit.setPet(newPet);
+            petVisit.setDate(LocalDate.now());
+            petVisit.setDescription("Checkup for " + petNames[i]);
+            visitService.save(petVisit);
+
+            // Create new vet
+            Vet newVet = new Vet();
+            newVet.setFirstName(vetFirstNames[i]);
+            newVet.setLastName(vetLastNames[i]);
+            // Assign a specialty to each new vet
+            if (i % 3 == 0) {
+                newVet.getSpecialities().add(savedRadiology);
+            } else if (i % 3 == 1) {
+                newVet.getSpecialities().add(savedSurgery);
+            } else {
+                newVet.getSpecialities().add(savedDentistry);
+            }
+
+            // Save the new vet
+            vetService.save(newVet);
+        }
+
         System.out.println("Loaded Vets....");
     }
 }

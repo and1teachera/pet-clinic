@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @author Angel Zlatenov
  */
 @Service
-@Profile({"default", "jpa"})
+//@Profile({"default", "jpa"})
 public class VisitServiceImpl extends AbstractCrudOperationsServiceImpl<Visit, VisitRepository> implements VisitService {
     public VisitServiceImpl(VisitRepository repository) {
         super(repository);

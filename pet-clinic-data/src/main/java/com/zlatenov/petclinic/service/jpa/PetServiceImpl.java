@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @author Angel Zlatenov
  */
 @Service
-@Profile({"default", "jpa"})
+//@Profile({"default", "jpa"})
 public class PetServiceImpl extends AbstractCrudOperationsServiceImpl<Pet, PetRepository> implements PetService {
     public PetServiceImpl(PetRepository repository) {
         super(repository);
