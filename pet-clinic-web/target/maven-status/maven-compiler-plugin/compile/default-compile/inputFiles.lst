@@ -1,7 +1,9 @@
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/main/java/com/zlatenov/petclinic/controllers/OwnerController.java
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/main/java/com/zlatenov/petclinic/controllers/PetController.java
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/main/java/com/zlatenov/petclinic/controllers/VetController.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/main/java/com/zlatenov/petclinic/actuator/AwareBeansEndpoint.java
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/main/java/com/zlatenov/petclinic/formatters/PetTypeFormatter.java
+/home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/main/java/com/zlatenov/petclinic/actuator/BeanPostProcessorsEndpoint.java
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/main/java/com/zlatenov/petclinic/controllers/IndexController.java
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/main/java/com/zlatenov/petclinic/controllers/VisitController.java
 /home/angel/IdeaProjects/pet-clinic/pet-clinic-web/src/main/java/com/zlatenov/petclinic/PetClinicApplication.java
