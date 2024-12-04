@@ -1,8 +1,7 @@
-package com.zlatenov.petclinic.service.jpa;
+package com.zlatenov.petclinic.service;
 
 import com.zlatenov.petclinic.model.Owner;
 import com.zlatenov.petclinic.repository.OwnerRepository;
-import com.zlatenov.petclinic.service.OwnerService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -18,9 +18,6 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 import java.util.Collection;
 
-/**
- * Created by jt on 9/22/18.
- */
 @Controller
 @AllArgsConstructor
 @RequestMapping("/owners/{ownerId}")

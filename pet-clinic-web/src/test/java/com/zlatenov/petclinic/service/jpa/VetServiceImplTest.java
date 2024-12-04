@@ -2,6 +2,7 @@ package com.zlatenov.petclinic.service.jpa;
 
 import com.zlatenov.petclinic.model.Vet;
 import com.zlatenov.petclinic.repository.VetRepository;
+import com.zlatenov.petclinic.service.VetServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
