@@ -2,7 +2,6 @@ package com.zlatenov.petclinic.service.jpa;
 
 import com.zlatenov.petclinic.model.Speciality;
 import com.zlatenov.petclinic.repository.SpecialityRepository;
-import com.zlatenov.petclinic.service.SpecialityServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

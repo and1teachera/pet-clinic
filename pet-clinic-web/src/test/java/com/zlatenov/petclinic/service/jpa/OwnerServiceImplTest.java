@@ -2,7 +2,6 @@ package com.zlatenov.petclinic.service.jpa;
 
 import com.zlatenov.petclinic.model.Owner;
 import com.zlatenov.petclinic.repository.OwnerRepository;
-import com.zlatenov.petclinic.service.OwnerServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

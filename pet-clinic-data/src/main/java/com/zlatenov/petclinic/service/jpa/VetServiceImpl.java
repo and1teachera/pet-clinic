@@ -1,7 +1,9 @@
-package com.zlatenov.petclinic.service;
+package com.zlatenov.petclinic.service.jpa;
 
 import com.zlatenov.petclinic.model.Vet;
 import com.zlatenov.petclinic.repository.VetRepository;
+import com.zlatenov.petclinic.service.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 

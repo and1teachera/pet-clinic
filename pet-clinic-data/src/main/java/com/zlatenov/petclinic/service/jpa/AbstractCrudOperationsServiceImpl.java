@@ -1,5 +1,6 @@
-package com.zlatenov.petclinic.service;
+package com.zlatenov.petclinic.service.jpa;
 
+import com.zlatenov.petclinic.service.CrudOperationsService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
