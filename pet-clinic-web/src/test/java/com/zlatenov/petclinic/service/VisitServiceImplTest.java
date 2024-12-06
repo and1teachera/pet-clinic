@@ -1,4 +1,4 @@
-package com.zlatenov.petclinic.service.jpa;
+package com.zlatenov.petclinic.service;
 
 import com.zlatenov.petclinic.model.Visit;
 import com.zlatenov.petclinic.repository.VisitRepository;
