@@ -10,8 +10,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import org.springframework.util.StringUtils;
-
 import java.util.HashSet;
 import java.util.Set;
 
