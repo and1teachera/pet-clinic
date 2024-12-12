@@ -2,6 +2,7 @@ package com.zlatenov.petclinic.controllers;
 
 import com.zlatenov.petclinic.model.Owner;
 import com.zlatenov.petclinic.service.OwnerService;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -44,7 +45,8 @@ class OwnerControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    void findOwners() throws Exception {
+    @DisplayName("Should find owners")
+    void shouldFindOwners() throws Exception {
         mockMvc.perform(get("/owners/find"))
                .andExpect(status().isOk())
                .andExpect(view().name("owners/findOwners"))
@@ -54,7 +56,8 @@ class OwnerControllerTest {
     }
 
     @Test
-    void processFindFormReturnMany() throws Exception {
+    @DisplayName("Should return many owners")
+    void shouldReturnManyOwners() throws Exception {
         List<Owner> owners = new ArrayList<>();
         Owner owner1 = new Owner();
         owner1.setId(1L);
@@ -72,7 +75,8 @@ class OwnerControllerTest {
     }
 
     @Test
-    void processFindFormReturnOne() throws Exception {
+    @DisplayName("Should return one owner")
+    void shouldReturnOneOwner() throws Exception {
         Owner owner = new Owner();
         owner.setId(1L);
         when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Collections.singletonList(owner));
@@ -83,7 +87,8 @@ class OwnerControllerTest {
     }
 
     @Test
-    void processFindFormEmptyReturnMany() throws Exception {
+    @DisplayName("Should return many owners when last name is empty")
+    void shouldReturnManyOwnersWhenLastNameIsEmpty() throws Exception {
         List<Owner> owners = new ArrayList<>();
         Owner owner1 = new Owner();
         owner1.setId(1L);
@@ -102,7 +107,8 @@ class OwnerControllerTest {
     }
 
     @Test
-    void ownerDetails() throws Exception {
+    @DisplayName("Should show owner details")
+    void shouldShowOwnerDetails() throws Exception {
         Owner owner = new Owner();
         long id = 1L;
         owner.setId(id);
@@ -115,7 +121,8 @@ class OwnerControllerTest {
     }
 
     @Test
-    void initCreationForm() throws Exception {
+    @DisplayName("Should initialize creation form")
+    void shouldInitCreationForm() throws Exception {
         mockMvc.perform(get("/owners/new"))
                .andExpect(status().isOk())
                .andExpect(view().name("owners/createOrUpdateOwnerForm"));
@@ -124,10 +131,10 @@ class OwnerControllerTest {
     }
 
     @Test
-    void processCreationForm() throws Exception {
+    @DisplayName("Should process creation form")
+    void shouldProcessCreationForm() throws Exception {
         Owner owner = Owner.builder().id(1L).build();
         when(ownerService.save(ArgumentMatchers.any())).thenReturn(owner);
-
 
         mockMvc.perform(post("/owners/new"))
                .andExpect(status().is3xxRedirection())
@@ -139,7 +146,8 @@ class OwnerControllerTest {
     }
 
     @Test
-    void initUpdateOwnerForm() throws Exception {
+    @DisplayName("Should initialize update owner form")
+    void shouldInitUpdateOwnerForm() throws Exception {
         long id = 1L;
         Owner owner = Owner.builder().id(id).build();
         when(ownerService.findById(id)).thenReturn(owner);
@@ -148,11 +156,11 @@ class OwnerControllerTest {
                .andExpect(status().isOk())
                .andExpect(view().name("owners/createOrUpdateOwnerForm"))
                .andExpect(model().attributeExists("owner"));
-
     }
 
     @Test
-    void processUpdateOwnerForm() throws Exception {
+    @DisplayName("Should process update owner form")
+    void shouldProcessUpdateOwnerForm() throws Exception {
         Owner owner = new Owner();
         long id = 1L;
         owner.setId(id);
