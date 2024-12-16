@@ -2,8 +2,8 @@ package com.zlatenov.petclinic.service;
 
 import com.zlatenov.petclinic.model.Owner;
 import com.zlatenov.petclinic.repository.OwnerRepository;
-import com.zlatenov.petclinic.service.OwnerServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -37,7 +37,8 @@ class OwnerServiceImplTest extends AbstractCrudOperationsServiceImplTest<Owner, 
     }
 
     @Test
-    void findByLastName() {
+    @DisplayName("Should find by last name")
+    void shouldFindByLastName() {
         Owner owner = collection.get(0);
         String lastName = "LastName1";
         owner.setLastName(lastName);
