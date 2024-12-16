@@ -1,6 +1,7 @@
 package com.zlatenov.petclinic.service;
 
 import com.zlatenov.petclinic.model.BaseEntity;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -45,7 +46,8 @@ abstract class AbstractCrudOperationsServiceImplTest<T extends BaseEntity, R ext
     }
 
     @Test
-    void findById() {
+    @DisplayName("Should find by ID")
+    void shouldFindById() {
         T element = collection.get(0);
         when(repository.findById(element.getId())).thenReturn(Optional.of(element));
 
@@ -56,7 +58,8 @@ abstract class AbstractCrudOperationsServiceImplTest<T extends BaseEntity, R ext
     }
 
     @Test
-    void save() {
+    @DisplayName("Should save entity")
+    void shouldSave() {
         T element = collection.get(0);
         when(repository.save(any())).thenReturn(element);
 
@@ -68,7 +71,8 @@ abstract class AbstractCrudOperationsServiceImplTest<T extends BaseEntity, R ext
     }
 
     @Test
-    void findAll() {
+    @DisplayName("Should find all entities")
+    void shouldFindAll() {
         when(repository.findAll()).thenReturn(collection);
 
         Set<T> elementsSet = service.findAll();
@@ -79,14 +83,16 @@ abstract class AbstractCrudOperationsServiceImplTest<T extends BaseEntity, R ext
     }
 
     @Test
-    void delete() {
+    @DisplayName("Should delete entity")
+    void shouldDelete() {
         service.delete(collection.get(0));
 
         verify(repository).delete(any());
     }
 
     @Test
-    void deleteById() {
+    @DisplayName("Should delete by ID")
+    void shouldDeleteById() {
         T element = collection.get(0);
         service.deleteById(element.getId());
 
@@ -94,7 +100,8 @@ abstract class AbstractCrudOperationsServiceImplTest<T extends BaseEntity, R ext
     }
 
     @Test
-    void saveAll() {
+    @DisplayName("Should save all entities")
+    void shouldSaveAll() {
         when(repository.saveAll(any())).thenReturn(collection);
 
         Collection<T> savedElements = service.saveAll(this.collection);
